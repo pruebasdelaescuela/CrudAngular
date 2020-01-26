@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { PersonaService } from 'src/app/Service/persona.service';
 import { Persona } from 'src/app/Modelo/Persona';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-agregar',

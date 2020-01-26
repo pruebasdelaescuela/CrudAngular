@@ -25,7 +25,7 @@ Eliminar(persona:Persona)
 {
   this.http.deletePersona(persona)
   .subscribe(datos=>{
-    this.personas=this.personas.filter(p=>p!=persona);
+   this.personas=this.personas.filter(p=>p!=persona);
     alert("eliminado");
     this.router.navigate(["listado"]);
     })

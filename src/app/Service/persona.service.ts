@@ -7,6 +7,7 @@ import { Persona } from '../Modelo/Persona';
 })
 export class PersonaService {
   path:string;
+  nombres:string;
   constructor(private http:HttpClient) {
     this.path='http://localhost:8080/personas'
    }
@@ -29,7 +30,10 @@ export class PersonaService {
    }
    deletePersona(persona:Persona)
    {
-    console.log("llega al servicio");
    return this.http.delete<Persona>(this.path+"/"+persona.id);
+   }
+   verNombres()
+   {
+     return this.http.get<string[]>(this.path+"/nombres");
    }
 }

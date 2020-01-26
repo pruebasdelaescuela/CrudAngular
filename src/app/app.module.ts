@@ -10,13 +10,15 @@ import {PersonaService} from './Service/persona.service';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ValidanombreDirective } from './validador/validanombre.directive';
+import { PrimeraMayusculaDirective } from './validador/primera-mayuscula.directive';
 @NgModule({
   declarations: [
     AppComponent,
     ListadoComponent,
     AgregarComponent,
     ModificarComponent,
-    ValidanombreDirective
+    ValidanombreDirective,
+    PrimeraMayusculaDirective,
   ],
   imports: [
     BrowserModule,

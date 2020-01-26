@@ -1,9 +1,6 @@
 <p>modificar works!</p>
 <form action="">
     <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
-    <div *ngIf="nombre.errors.nombreUnico">
-        Ese nombre de usuario ya está en uso
-      </div>
       {{persona.id}}
       {{persona.nombre}}
 <button (click)="Actualizar(persona)">Modificar</button>

@@ -1,5 +1,17 @@
 <p>agregar works!</p>
-<form action="">
-    <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
-<button (click)="Guardar()">Guardar</button>
+<form (submit)="Guardar()" #formularioAlta="ngForm">
+    <input type="text" id="nombre" name="nombre" autocomplete="off" [(ngModel)]="persona.nombre" #nombre="ngModel" required PrimeraMayuscula nombreUnico [ngModelOptions]="{updateOn:'blur'}">
+    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+      <div *ngIf="nombre.errors.required">
+        el nombre es obligatorio
+      </div>
+      <div *ngIf="nombre.errors.PrimeraMayuscula">
+        {{nombre.errors.PrimeraMayuscula.message}}
+      </div>
+    <div *ngIf="nombre.errors.nombreUnico">
+      ya existe
+    </div>
+    </div>
+    <input type="text">
+    <button type="submit" [disabled] = "!formularioAlta.form.valid">Guardar</button>
 </form>

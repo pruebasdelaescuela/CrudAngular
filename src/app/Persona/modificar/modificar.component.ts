@@ -16,7 +16,6 @@ persona:Persona=new Persona();
     this.Editar();
   }
   Editar(){
-   
   let id=localStorage.getItem("id");
   this.http.getPersonaUnica(+id)
   .subscribe(datos=>{this.persona=datos;})
@@ -25,7 +24,7 @@ persona:Persona=new Persona();
   {
     this.http.updatePersona(persona)
     .subscribe(datos=>{
-      this.persona=datos;
+     // this.persona=datos;
       this.router.navigate(["listado"]);
     })
   }
